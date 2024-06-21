@@ -46,6 +46,7 @@ const options = {
                 messageColor: '#ffffff',
                 class: 'resolved-promise',
                 backgroundColor: '#b51b1b',
+
                 position: 'topRight',
                 theme: 'dark',
             });

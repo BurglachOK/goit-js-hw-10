@@ -26,14 +26,12 @@ button:disabled {
     max-width: 346px;
     display: flex;
     justify-content: space-between;
-
     margin-top: 15px;
 }
 
 .field {
     display: flex;
     flex-direction: column-reverse;
-    align-items: center;
 }
 
 .value {
