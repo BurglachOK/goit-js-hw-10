@@ -43,10 +43,10 @@ const options = {
                 title: 'Error',
                 message: 'Please choose a date in the future',
             });
-            startBtn.disabled = true;
+            buttonEl.disabled = true;
         } else {
             userSelectedDate = selectedDate;
-            startBtn.disabled = false;
+            buttonEl.disabled = false;
         }
     },
 };
