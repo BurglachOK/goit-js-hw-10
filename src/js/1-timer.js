@@ -37,25 +37,16 @@ const options = {
     minuteIncrement: 1,
 
     onClose(selectedDates) {
-        if (selectedDates[0] < Date.now()) {
-            iziToast.show({
+        const selectedDate = selectedDates[0];
+        if (selectedDate <= new Date()) {
+            iziToast.error({
                 title: 'Error',
                 message: 'Please choose a date in the future',
-                titleColor: '#ffffff',
-                titleSize: '16',
-                messageColor: '#ffffff',
-                class: 'resolved-promise',
-                backgroundColor: '#b51b1b',
-
-                iconUrl: iconClose,
-                position: 'topRight',
-                theme: 'dark',
             });
-
-            buttonEl.disabled = true;
+            startBtn.disabled = true;
         } else {
-            buttonEl.disabled = false;
-            userSelectedDate = selectedDates[0];
+            userSelectedDate = selectedDate;
+            startBtn.disabled = false;
         }
     },
 };
