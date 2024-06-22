@@ -30,6 +30,8 @@ function convertMs(ms) {
 }
 
 // Parameters
+
+
 const options = {
     enableTime: true,
     time_24hr: true,
@@ -47,7 +49,6 @@ const options = {
                 messageColor: '#ffffff',
                 class: 'resolved-promise',
                 backgroundColor: '#b51b1b',
-
                 position: 'topRight',
                 theme: 'dark',
             });
@@ -82,30 +83,25 @@ buttonEl.addEventListener('click', () => {
     buttonEl.disabled = true;
     inputEl.disabled = true;
 
-    /*
+
 
     setTimeout(() => {
         clearInterval(intervalId);
         inputEl.disabled = false;
     }, userSelectedDate - Date.now());
 
-    */
+
 
     const intervalId = setInterval(() => {
         const currentTime = Date.now();
         const diff = userSelectedDate - currentTime;
         const objTime = convertMs(diff);
 
-        /*----------------------------------------------------
-        if (onClose(diff) >= 1000) {
+
+        if (diff < 1000) {
             clearInterval(intervalId);
             imputEl.disabled = false;
-            userSelectedDate - Date.now();
         }
-        else {
-            imputEl.disabled = true;
-        }
-        -----------------------------------------------------*/
 
         days.textContent = objTime.days.toString().padStart(2, '0');
         hours.textContent = objTime.hours.toString().padStart(2, '0');
