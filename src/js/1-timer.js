@@ -83,22 +83,13 @@ buttonEl.addEventListener('click', () => {
     buttonEl.disabled = true;
     inputEl.disabled = true;
 
-
-
-    setTimeout(() => {
-        clearInterval(intervalId);
-        inputEl.disabled = false;
-    }, userSelectedDate - Date.now());
-
-
-
     const intervalId = setInterval(() => {
         const currentTime = Date.now();
         const diff = userSelectedDate - currentTime;
         const objTime = convertMs(diff);
 
 
-        if (diff < 1000) {
+        if (diff <= 1000) {
             clearInterval(intervalId);
             imputEl.disabled = false;
         }
