@@ -69,11 +69,11 @@ let userSelectedDate;
 flatpickr(inputEl, options);
 
 /**============================================================= */
-
+/*
 inputEl.addEventListener('input', event => {
     userSelectedDate = event.target.value;
 });
-
+*/
 buttonEl.addEventListener('click', () => {
     const days = document.querySelector('[data-days]');
     const hours = document.querySelector('[data-hours]');
