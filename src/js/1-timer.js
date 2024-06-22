@@ -88,14 +88,15 @@ buttonEl.addEventListener('click', () => {
         const diff = userSelectedDate - currentTime;
         const objTime = convertMs(diff);
 
-
         days.textContent = objTime.days.toString().padStart(2, '0');
         hours.textContent = objTime.hours.toString().padStart(2, '0');
         minutes.textContent = objTime.minutes.toString().padStart(2, '0');
         seconds.textContent = objTime.seconds.toString().padStart(2, '0');
+
         if (diff < 1000) {
             clearInterval(intervalId);
-            imputEl.disabled = false;
+            inputEl.disabled = false;
         }
+
     }, 1000);
 });
