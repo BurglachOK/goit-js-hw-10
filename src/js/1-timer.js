@@ -36,6 +36,7 @@ const options = {
     defaultDate: new Date(),
     minuteIncrement: 1,
 
+
     onClose(selectedDates) {
         if (selectedDates[0] < Date.now()) {
             iziToast.show({
@@ -81,15 +82,30 @@ buttonEl.addEventListener('click', () => {
     buttonEl.disabled = true;
     inputEl.disabled = true;
 
+    /*
+
     setTimeout(() => {
         clearInterval(intervalId);
         inputEl.disabled = false;
     }, userSelectedDate - Date.now());
 
+    */
+
     const intervalId = setInterval(() => {
         const currentTime = Date.now();
         const diff = userSelectedDate - currentTime;
         const objTime = convertMs(diff);
+
+        /*----------------------------------------------------
+        if (onClose(diff) >= 1000) {
+            clearInterval(intervalId);
+            imputEl.disabled = false;
+            userSelectedDate - Date.now();
+        }
+        else {
+            imputEl.disabled = true;
+        }
+        -----------------------------------------------------*/
 
         days.textContent = objTime.days.toString().padStart(2, '0');
         hours.textContent = objTime.hours.toString().padStart(2, '0');
